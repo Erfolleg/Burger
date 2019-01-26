@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__buttons {
+    display: flex;
+    align-items: center;
+}
+
+.menu__list {
+    display: flex;
+    align-items: center;
+}
+
+.menu__item {
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+        &::after {
+            display: none;
+        }
+    }
+    &::after {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        display: inline-block;
+        background: #fff;
+        margin: 0 10px;
+    }
+}
+
+.menu__link {
+    color: #fff;
+    text-decoration: none;
+}
+
