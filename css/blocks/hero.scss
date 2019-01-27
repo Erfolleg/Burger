@@ -12,6 +12,10 @@
 .hero__order-btn {
     margin-left: 14px;
     margin-bottom: 10px;
+
+    &:hover {
+        background: #c1401e;
+    }
 }
 
 .hero__content {
