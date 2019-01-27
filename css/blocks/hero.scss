@@ -1,5 +1,6 @@
 .hero {
-    background: url('../../img/hero-bg.jpg') center center no-repeat / cover;
+    background: url('../../img/hero-bg.jpg') center center no-repeat;
+    background-size: cover;
 }
 
 .hero__container {
