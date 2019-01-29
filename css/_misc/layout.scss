@@ -9,7 +9,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  @include ubuntu();
   color: $black;
 }
 
@@ -80,4 +79,5 @@ footer {
 
 * {
   box-sizing: border-box;
+  
 }
