@@ -10,10 +10,14 @@
     position: relative;
 }
 
+.logo-icon {
+    width: 92px;
+    height: 69px;
+}
+
 .hero__order-btn {
     margin-left: 14px;
     margin-bottom: 10px;
-
     &:hover {
         background: #c1401e;
     }
