@@ -45,7 +45,6 @@
     font-size: 14px;
     font-weight: 300;
     line-height: 1.5;
-    
     &:focus {
         outline: none;
         border: 2px solid #f9b43b;
@@ -123,28 +122,18 @@
 }
 
 .form__row-button {
-    padding: 12px 15px;
-    background-color: #e45028;
-    border-radius: 5px;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2.4px;
-    color: #ffffff;
-    font-family: Ubuntu;
-    font-size: 13px;
-    font-weight: 500;
     border: none;
     outline: none;
-    cursor: pointer;
     margin-right: 20px;
 
-    &:hover {
-        background-color: #c1401e;
+    &_reset {
+        padding-left: 0;
+        padding-right: 0;
+        background: transparent;
+        
+        &:hover {
+            background: inherit;
+        }
     }
 }
 
-.form__row-button_reset {
-    padding-left: 0;
-    padding-right: 0;
-    background: transparent;
-}

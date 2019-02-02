@@ -8,6 +8,11 @@
     font-size: 13px;
     font-family: 'Ubuntu';
     font-weight: 500;
+    cursor: pointer;
+    
+    &:hover {
+        background: #c1401e;
+    }
 
     &__background-black {
         background: $black;
