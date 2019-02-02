@@ -137,6 +137,10 @@
     outline: none;
     cursor: pointer;
     margin-right: 20px;
+
+    &:hover {
+        background-color: #c1401e;
+    }
 }
 
 .form__row-button_reset {
