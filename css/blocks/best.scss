@@ -13,7 +13,7 @@
 
 .best__item {
     flex: 1;
-    margin-right: 38px;
+    margin-right: rem(38px);
     text-align: center;
     &:last-child {
         margin-right: 0;
@@ -22,22 +22,22 @@
 
 .best__icon {
     display: inline-block;
-    margin-bottom: 21px;
+    margin-bottom: rem(21px);
 }
 
 .best__icon-meat {
-    width: 97px;
-    height: 89px;
+    width: rem(97px);
+    height: rem(89px);
 }
 
 .best__icon-hand {
-    width: 73px;
-    height: 85px;
+    width: rem(73px);
+    height: rem(85px);
 }
 
 .best__icon-natural {
-    width: 88px;
-    height: 75px;
+    width: rem(88px);
+    height: rem(75px);
 }
 
 .best__description {
@@ -47,9 +47,10 @@
 .best__description {
     h2 {
         font-family: 'Lifehack';
-        font-size: 24px;
-        letter-spacing: -0.6px;
-        margin-bottom: 20px;
+        font-size: rem(24px);
+        letter-spacing: rem(-0.6px);
+        margin-bottom: rem(20px);
+        line-height: 1.167;
     }
 }
 
@@ -57,8 +58,8 @@
     p {
         opacity: 0.8;
         font-family: 'Ubuntu';
-        font-size: 14px;
+        font-size: rem(14px);
         font-weight: 300;
-        line-height: 24.07px;
+        line-height: 1.7;
     }
 }

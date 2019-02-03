@@ -1,8 +1,8 @@
 .arrow__down {
     background: url('../img/icons/arrow-down.svg') center center no-repeat;
     position: absolute;
-    bottom: 31px;
+    bottom: rem(31px);
     left: 50%;
-    width: 29px;
-    height: 14px;
+    width: rem(29px);
+    height: rem(14px);
 }

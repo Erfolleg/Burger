@@ -1,10 +1,14 @@
+html {
+  font-size: rem(16px);
+}
+
 html,
 body {
   height: 100%;
 }
 
 body {
-  font-size: 16px;
+  font-size: rem(16px);
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -16,19 +20,19 @@ body {
   overflow: hidden;
   min-height: 100%;
   width: 100%;
-  // min-width: 940px;
+  // min-width: rem(940px);
 
 }
 
 .container {
-  max-width: 940px;
+  max-width: rem(940px);
   width: 95%;
   margin: 0 auto;
 }
 
 .section {
   height: 100vh;
-  min-width: 650px;
+  min-width: rem(650px);
 
   &_centered {
     .title {

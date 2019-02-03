@@ -1,11 +1,11 @@
 .btn {
     background: $red;
-    padding: 8px 16px;
-    border-radius: 5px;
+    padding: rem(8px) rem(16px);
+    border-radius: rem(5px);
     text-transform: uppercase;
     text-decoration: none;
     color: #fff;
-    font-size: 13px;
+    font-size: rem(13px);
     font-family: 'Ubuntu';
     font-weight: 500;
     line-height: 1.875;

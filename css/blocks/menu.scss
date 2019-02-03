@@ -29,7 +29,7 @@
             color: $yellow;
         }
         .menu-accordeon__content {
-            width: 540px;
+            width: rem(540px);
         }
         .menu-accordeon__text {
             display: block;
@@ -38,7 +38,7 @@
 }
 
 .menu-accordeon__trigger {
-    width: 80px;
+    width: rem(80px);
     display: block;
     height: 100%;
     text-decoration: none;
@@ -50,8 +50,9 @@
 .menu-accordeon__trigger-text {
     color: #fff;
     font-family: 'Gagalin';
-    font-size: 40px;
+    font-size: rem(40px);
     font-weight: 400;
+    line-height: 1.57;
     text-align: center;
     position: absolute;
     left: 50%;
@@ -59,7 +60,7 @@
     white-space: nowrap;
     transform: rotate(-90deg) translatey(-50%);
     transform-origin: 0 0;
-    margin-top: -40px;
+    margin-top: rem(-40px);
 }
 
 .menu-accordeon__content {
@@ -73,8 +74,9 @@
 .menu-accordeon__text {
     color: #fff;
     font-family: 'Ubuntu';
-    font-size: 14px;
+    font-size: rem(14px);
     font-weight: 300;
-    padding: 60px 30px;
+    line-height: 1.7;
+    padding: rem(60px) rem(30px);
     display: none;
 }
