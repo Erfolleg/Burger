@@ -16,12 +16,13 @@ body {
   overflow: hidden;
   min-height: 100%;
   width: 100%;
-  min-width: 940px;
+  // min-width: 940px;
 
 }
 
 .container {
-  width: 940px;
+  max-width: 940px;
+  width: 95%;
   margin: 0 auto;
 }
 
