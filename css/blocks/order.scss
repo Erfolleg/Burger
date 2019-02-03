@@ -4,10 +4,28 @@
 
 .form {
     display: flex;
+    @include tablets() {
+        flex-direction: column;
+        padding: 0 20%;
+    }
+
+    @include phones () {
+        padding: 0 2%;
+    }
 }
 
 .form__column {
     flex: 1;
+    margin-right: rem(20px);
+
+    @include tablets() {
+        margin-right: 0;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+
+    
 }
 
 .form__row {
@@ -22,7 +40,7 @@
     margin-right: rem(20px);
     flex: 1;
     &:last-child {
-        margin-right: o;
+        margin-right: 0;
     }
 }
 
@@ -32,11 +50,15 @@
     font-size: rem(14px);
     font-weight: 300;
     line-height: 1.714;
+
+    @include phones () {
+        font-size: rem(14px);
+    }
 }
 
 .form__block-input {
-    border-radius: rem(5px);
-    border: rem(1px) solid #d1cfcb;
+    border-radius: 5px;
+    border: 1px solid #d1cfcb;
     background-color: #ffffff;
     width: 100%;
     padding: rem(5px) rem(10px);
@@ -47,7 +69,7 @@
     line-height: 1.5;
     &:focus {
         outline: none;
-        border: rem(2px) solid #f9b43b;
+        border: 2px solid #f9b43b;
     }
 }
 
@@ -84,7 +106,7 @@
     width: rem(8px);
     height: rem(9px);
     border: 0 solid $red;
-    border-width: 0 rem(2px) rem(2px) 0;
+    border-width: 0 2px 2px 0;
     -webkit-transform: rotateZ(45deg);
     margin: rem(-1px) rem(2px);
     cursor: pointer;
@@ -126,17 +148,24 @@
     outline: none;
     margin-right: rem(20px);
     line-height: 2.3;
-
     &_reset {
         padding-left: 0;
         padding-right: 0;
         font-size: rem(14px);
         font-weight: 300;
         line-height: 1.7;
-         background: transparent;
-
+        background: transparent;
         &:hover {
             background: inherit;
         }
+    }
+}
+
+.form__row-btn {
+    @include phones () {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
     }
 }

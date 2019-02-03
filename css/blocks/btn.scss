@@ -1,7 +1,7 @@
 .btn {
     background: $red;
     padding: rem(8px) rem(16px);
-    border-radius: rem(5px);
+    border-radius: 5px;
     text-transform: uppercase;
     text-decoration: none;
     color: #fff;
@@ -17,6 +17,10 @@
 
     &__background-black {
         background: $black;
+
+        @include phones () {
+            
+        }
         
         &:hover {
             background-color: #1f2122;

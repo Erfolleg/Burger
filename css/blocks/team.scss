@@ -12,31 +12,42 @@
     background-color: #2f3234;
     opacity: 0.93;
     padding: 8% 10% 0 9%;
+    @include tablets() {
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
 }
 
 .team-accordeon {
     padding-left: 4%;
     margin-top: rem(-7px);
+    @include tablets() {
+        text-align: center;
+    }
 }
 
 .team-accordeon__item {
     margin-bottom: rem(25px);
-
     &:last-child {
         margin-bottom: 0;
     }
-
     &__active {
         .team-accordeon__trigger {
             color: $yellow;
-
             &::before {
                 transform: rotate(-180deg);
             }
         }
-
         .team-accordeon__content {
             display: flex;
+            @include tablets() {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     }
 }
@@ -51,7 +62,9 @@
     position: relative;
     display: block;
     margin-bottom: rem(10px);
-
+    @include tablets() {
+        display: inline-flex;
+    }
     &:before {
         content: "";
         display: block;
@@ -61,20 +74,19 @@
         width: 0;
         height: 0;
     }
-
     &:before {
-        border-top: rem(7px) solid $yellow;
-        border-left: rem(5px) solid transparent;
-        border-right: rem(5px) solid transparent;
-        border-bottom: rem(0px) solid transparent;
+        border-top: 7px solid $yellow;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 0px solid transparent;
         transform: rotate(0deg);
         transition: .3s;
-    }   
+    }
 }
 
 .team-accordeon__content {
     display: none;
-}
+   }
 
 .team-accordeon__pic {
     text-align: center;
@@ -99,9 +111,14 @@
     font-weight: 300;
     line-height: 1.714;
     padding: 0 0 0 rem(20px);
-
-    h4 {
+    & h4 {
         font-weight: 700;
         margin-bottom: rem(5px);
     }
+    @include tablets() {
+        padding: 0;
+        margin-top: 20px;
+        width: 75%;
+    }
+
 }

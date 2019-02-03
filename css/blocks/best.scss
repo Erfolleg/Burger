@@ -9,53 +9,80 @@
 
 .best__list {
     display: flex;
+
+    @include phones () {
+        flex-direction: column;
+        padding: 0 5%;
+    }
 }
 
 .best__item {
     flex: 1;
     margin-right: rem(38px);
     text-align: center;
+    
     &:last-child {
         margin-right: 0;
     }
+
+    @include phones () {
+        display: flex;
+        flex-direction: row;
+        margin-right: 0;
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
+
 
 .best__icon {
     display: inline-block;
     margin-bottom: rem(21px);
-}
 
-.best__icon-meat {
-    width: rem(97px);
-    height: rem(89px);
-}
+    &-meat {
+        width: rem(97px);
+        height: rem(89px);
+    
+        @include phones () {
+            margin-right: 20px;
+        }
+    }
 
-.best__icon-hand {
-    width: rem(73px);
-    height: rem(85px);
-}
-
-.best__icon-natural {
-    width: rem(88px);
-    height: rem(75px);
+    &-hand {
+        width: rem(73px);
+        height: rem(85px);
+        @include phones () {
+            margin-right: 39px;
+        }
+    }
+    &-natural {
+        width: rem(88px);
+        height: rem(75px);
+        @include phones () {
+            margin-right: 26px;
+        }
+    }
 }
 
 .best__description {
     color: $black;
-}
 
-.best__description {
-    h2 {
+    @include phones () {
+        text-align: left;
+    }
+
+    & h2 {
         font-family: 'Lifehack';
         font-size: rem(24px);
         letter-spacing: rem(-0.6px);
         margin-bottom: rem(20px);
         line-height: 1.167;
     }
-}
 
-.best__description {
-    p {
+    & p {
         opacity: 0.8;
         font-family: 'Ubuntu';
         font-size: rem(14px);

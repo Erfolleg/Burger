@@ -8,6 +8,7 @@
     flex-direction: column;
     height: 100%;
     position: relative;
+    padding-top: 15px;
 }
 
 .logo-icon {
@@ -24,16 +25,41 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: .6;
     padding-left: rem(15px);
+    @include tablets() {
+        flex-direction: column;
+    }
 }
 
 .hero__content-img {
     margin-right: rem(15px);
+    @include tablets() {
+        width: 50%;
+        margin-right: 0;
+    }
+
+    @include phones () {
+        width: 80%;
+        margin-right: 0;
+    }
+}
+
+.hero__burger-img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .hero__content-text {
     padding-top: rem(60px);
+    @include tablets() {
+        text-align: center;
+        padding-top: 0;
+        width: 50%;
+    }
+
+    @include phones () {
+        width: 80%;
+    }
 }
 
 .hero__content-description {
@@ -43,4 +69,9 @@
     font-weight: 500;
     letter-spacing: rem(-1.63px);
     line-height: 1;
+
+    @include phones () {
+        font-size: rem(60px);
+        line-height: 1.1;
+    }
 }

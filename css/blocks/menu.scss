@@ -24,15 +24,25 @@
 .menu-accordeon__item {
     display: flex;
     height: 100%;
+    justify-content: flex-end;
+    @include phones () {
+        display: none;
+    }
     &__active {
         .menu-accordeon__trigger-text {
             color: $yellow;
         }
         .menu-accordeon__content {
-            width: rem(540px);
+            width: 60%;
+            @include tablets() {
+                width: 100%;
+            }
         }
         .menu-accordeon__text {
             display: block;
+        }
+        @include phones () {
+            display: flex;
         }
     }
 }
