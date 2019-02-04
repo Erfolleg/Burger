@@ -57,7 +57,7 @@
 }
 
 .form__block-input {
-    border-radius: 5px;
+    border-radius: rem(5px);
     border: 1px solid #d1cfcb;
     background-color: #ffffff;
     width: 100%;
@@ -106,7 +106,7 @@
     width: rem(8px);
     height: rem(9px);
     border: 0 solid $red;
-    border-width: 0 2px 2px 0;
+    border-width: 0 rem(2px) rem(2px) 0;
     -webkit-transform: rotateZ(45deg);
     margin: rem(-1px) rem(2px);
     cursor: pointer;

@@ -29,7 +29,7 @@
         display: flex;
         flex-direction: row;
         margin-right: 0;
-        margin-bottom: 40px;
+        margin-bottom: rem(40px);
 
         &:last-child {
             margin-bottom: 0;
@@ -47,7 +47,7 @@
         height: rem(89px);
     
         @include phones () {
-            margin-right: 20px;
+            margin-right: rem(20px);
         }
     }
 
@@ -55,14 +55,14 @@
         width: rem(73px);
         height: rem(85px);
         @include phones () {
-            margin-right: 39px;
+            margin-right: rem(39px);
         }
     }
     &-natural {
         width: rem(88px);
         height: rem(75px);
         @include phones () {
-            margin-right: 26px;
+            margin-right: rem(26px);
         }
     }
 }

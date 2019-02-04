@@ -1,10 +1,13 @@
-.contacts__map {
-    background: center center / cover no-repeat;
-    height: 100%;
+.contacts {
     position: relative;
 }
 
-.footer {
+.footer-contacts__map {
+    background: center center / cover no-repeat;
+    height: 100%;
+}
+
+.footer-block {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -26,12 +29,10 @@
     @include phones () {
         text-align: center;
         margin-bottom: rem(13px);
-
         &:last-child {
             margin-bottom: 0;
         }
     }
-   
 }
 
 .footer__contacts-phone {
@@ -72,7 +73,6 @@
 
 .socials__item {
     margin-right: rem(20px);
-
     &:last-child {
         margin-right: 0;
     }

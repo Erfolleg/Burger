@@ -53,7 +53,6 @@
 
 .title__header {
     line-height: 5.313;
-
     @include phones () {
         font-size: rem(63px);
     }

@@ -9,6 +9,7 @@
 .title__menu {
     color: #ffffff;
     font-weight: 400;
+    margin: 0;
 }
 
 .section__title-menu {
@@ -19,7 +20,15 @@
 
 .menu-accordeon__list {
     display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    @include phones () {
+        display: block;
+    }
 }
+
 
 .menu-accordeon__item {
     display: flex;
@@ -34,16 +43,44 @@
         }
         .menu-accordeon__content {
             width: 60%;
-            @include tablets() {
-                width: 100%;
+            position: relative;
+            @include phones () {
+                width: 87%;
+                .menu-accordeon__close {
+                    position: absolute;
+                    right: rem(30px);
+                    top: rem(30px);
+                    width: rem(20px);
+                    height: rem(20px);
+                    opacity: 0.7;
+                    &:before,
+                    &:after {
+                        position: absolute;
+                        left: rem(15px);
+                        content: '';
+                        height: rem(20px);
+                        width: rem(3px);
+                        background-color: #fff;
+                        border-radius: rem(3px);
+                    }
+                    &:before {
+                        transform: rotate(45deg);
+                    }
+                    &:after {
+                        transform: rotate(-45deg);
+                    }
+                }
             }
         }
-        .menu-accordeon__text {
-            display: block;
+        @include tablets() {
+            width: 100%;
         }
-        @include phones () {
-            display: flex;
-        }
+    }
+    .menu-accordeon__text {
+        display: block;
+    }
+    @include phones () {
+        display: flex;
     }
 }
 

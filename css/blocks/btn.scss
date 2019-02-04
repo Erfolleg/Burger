@@ -1,7 +1,7 @@
 .btn {
     background: $red;
     padding: rem(8px) rem(16px);
-    border-radius: 5px;
+    border-radius: rem(5px);
     text-transform: uppercase;
     text-decoration: none;
     color: #fff;
@@ -10,18 +10,17 @@
     font-weight: 500;
     line-height: 1.875;
     cursor: pointer;
-    
     &:hover {
         background: #c1401e;
     }
-
     &__background-black {
         background: $black;
-
-        @include phones () {
-            
+        &::before {
+            content: "Подробнее";
+            @include phones () {
+                content: "Читать отзыв";
+            }
         }
-        
         &:hover {
             background-color: #1f2122;
         }

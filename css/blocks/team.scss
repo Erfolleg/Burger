@@ -75,10 +75,10 @@
         height: 0;
     }
     &:before {
-        border-top: 7px solid $yellow;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-bottom: 0px solid transparent;
+        border-top: rem(7px) solid $yellow;
+        border-left: rem(5px) solid transparent;
+        border-right: rem(5px) solid transparent;
+        border-bottom: rem(0px) solid transparent;
         transform: rotate(0deg);
         transition: .3s;
     }
