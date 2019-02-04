@@ -1,10 +1,14 @@
-.contacts {
-    position: relative;
+.footer {
+    height: 100%;
 }
 
 .footer-contacts__map {
     background: center center / cover no-repeat;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .footer-block {
@@ -13,7 +17,7 @@
     left: 0;
     right: 0;
     background: url('../img/bg-footer.jpg') center center / cover no-repeat;
-    padding: rem(10px) 0
+    padding: rem(10px) 0;
 }
 
 .container__footer {
