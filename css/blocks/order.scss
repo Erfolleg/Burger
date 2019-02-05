@@ -2,7 +2,7 @@
     background: url('../img/bg-order.jpg') center center / cover no-repeat;
 }
 
-.form {
+.order-form {
     display: flex;
     @include tablets() {
         flex-direction: column;
