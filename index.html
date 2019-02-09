@@ -63,9 +63,14 @@
                             <div class="hero__content-description">натуральные бургеры</div>
                         </div>
                     </div>
-                    <a href="#" class="arrow__down"></a>
+                    <a href="#" class="arrow-scroll__down">
+                        <svg class="arrow-scroll__icon">
+                            <use xlink:href="./css/blocks/sprite.svg#arrow-scroll"></use>
+                        </svg>
+                    </a>
                 </div>
             </section>
+
             <section class="section section_centered best">
                 <div class="container">
                     <div class="title best__title">Мы лучшие</div>
@@ -110,6 +115,51 @@
                     </ul>
                 </div>
             </section>
+
+            <section class="section burger">
+                <a href="#" class="arrow-scroll arrow-scroll__left">
+                    <svg class="arrow-scroll__icon arrow-scroll__icon-left">
+                        <use xlink:href="./css/blocks/sprite.svg#arrow-scroll"></use>
+                    </svg>
+                </a>
+                <div class="container burger__container">
+                    <div class="burger__content">
+                        <div class="burger__content-img">
+                            <img src="./img/content/burger/dark-burger.png" alt="dark_beef_burger" class="burger__img">
+                            <a href="#" class="burger__composition">
+                                <svg class="burger__composition-icon_burger">
+                                    <use xlink:href="./css/blocks/sprite.svg#burger"></use>
+                                </svg>
+                                <div class="burger__composition-text">состав</div>
+                            </a>
+                            <div class="burger__composition-icon_img">
+                                <div class="burger__composition-icon_numbers burger__composition-text">1200</div>
+                                <svg class="burger__composition-icon_kkal">
+                                    <use xlink:href="./css/blocks/sprite.svg#kkal"></use>
+                                </svg>
+                                <div class="burger__composition-text burger__composition-text_kkal">ккал</div>
+                            </div>
+                        </div>
+                        <div class="burger__content-text">
+                            <div class="title burger__content-title">Dark BEEF Burger</div>
+                            <div class="burger__content-description">Ваш старый добрый знакомый, с рубленым бифштексом
+                                из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком,
+                                салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</div>
+                            <div class="burger__content-order">
+                                <div class="burger__content-amount">500</div>
+                                <div class="burger__content-amount_rub">рублей</div>
+                                <div class="btn__burger btn">Заказать</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="arrow-scroll arrow-scroll__right">
+                    <svg class="arrow-scroll__icon arrow-scroll__icon-right">
+                        <use xlink:href="./css/blocks/sprite.svg#arrow-scroll"></use>
+                    </svg>
+                </a>
+            </section>
+
             <section class="section team">
                 <div class="team__section">
                     <div class="title">Команда</div>
@@ -118,7 +168,8 @@
                             <a href="#" class="team-accordeon__trigger">Дэниэл Редклиф</a>
                             <div class="team-accordeon__content">
                                 <div class="team-accordeon__pic">
-                                    <div class="team-accordeon__img" style="background-image: url('./img/content/team/team1.jpg')"></div>
+                                    <div class="team-accordeon__img"
+                                        style="background-image: url('./img/content/team/team1.jpg')"></div>
                                 </div>
                                 <div class="team-accordeon__text">
                                     <h2>Оператор</h2>
@@ -126,11 +177,12 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="team-accordeon__item team-accordeon__item__active">
+                        <li class="team-accordeon__item">
                             <a href="#" class="team-accordeon__trigger">Ричард Джеймс</a>
                             <div class="team-accordeon__content">
                                 <div class="team-accordeon__pic">
-                                    <div class="team-accordeon__img" style="background-image: url('./img/content/team/team1.jpg')"></div>
+                                    <div class="team-accordeon__img"
+                                        style="background-image: url('./img/content/team/team1.jpg')"></div>
                                 </div>
                                 <div class="team-accordeon__text">
                                     <h4>Оператор</h4>
@@ -142,7 +194,8 @@
                             <a href="#" class="team-accordeon__trigger">Джейк Финн</a>
                             <div class="team-accordeon__content">
                                 <div class="team-accordeon__pic">
-                                    <div class="team-accordeon__img" style="background-image: url('./img/content/team/team1.jpg')"></div>
+                                    <div class="team-accordeon__img"
+                                        style="background-image: url('./img/content/team/team1.jpg')"></div>
                                 </div>
                                 <div class="team-accordeon__text">
                                     <h2>Оператор</h2>
@@ -154,7 +207,8 @@
                             <a href="#" class="team-accordeon__trigger">Николай Иванов</a>
                             <div class="team-accordeon__content">
                                 <div class="team-accordeon__pic">
-                                    <div class="team-accordeon__img" style="background-image: url('./img/content/team/team1.jpg')"></div>
+                                    <div class="team-accordeon__img"
+                                        style="background-image: url('./img/content/team/team1.jpg')"></div>
                                 </div>
                                 <div class="team-accordeon__text">
                                     <h2>Оператор</h2>
@@ -168,8 +222,9 @@
             <section class="section menu">
                 <div class="title title__menu section__title-menu">Меню</div>
                 <ul class="menu-accordeon__list">
-                    <li class="menu-accordeon__item menu-accordeon__item__active">
-                        <a href="#" class="menu-accordeon__trigger" style="background-image: url('./img/content/menu/menu-meat.jpg')">
+                    <li class="menu-accordeon__item">
+                        <a href="#" class="menu-accordeon__trigger"
+                            style="background-image: url('./img/content/menu/menu-meat.jpg')">
                             <span class="menu-accordeon__trigger-text">Для мясоедов</span>
                         </a>
                         <div class="menu-accordeon__content">
@@ -191,7 +246,8 @@
                         </div>
                     </li>
                     <li class="menu-accordeon__item">
-                        <a href="#" class="menu-accordeon__trigger" style="background-image: url('./img/content/menu/menu-vegan.jpg')">
+                        <a href="#" class="menu-accordeon__trigger"
+                            style="background-image: url('./img/content/menu/menu-vegan.jpg')">
                             <span class="menu-accordeon__trigger-text">Вегетарианское</span>
                         </a>
                         <div class="menu-accordeon__content">
@@ -213,7 +269,8 @@
                         </div>
                     </li>
                     <li class="menu-accordeon__item">
-                        <a href="#" class="menu-accordeon__trigger" style="background-image: url('./img/content/menu/menu-dietary.jpg')">
+                        <a href="#" class="menu-accordeon__trigger"
+                            style="background-image: url('./img/content/menu/menu-dietary.jpg')">
                             <span class="menu-accordeon__trigger-text">Диетическое</span>
                         </a>
                         <div class="menu-accordeon__content">
@@ -389,7 +446,8 @@
                                 <div class="form__row">
                                     <label for="" class="form__block">
                                         <div class="form__block-title">Коментарий</div>
-                                        <textarea class="form__block-input form__input--textarea" name="comment"></textarea>
+                                        <textarea class="form__block-input form__input--textarea"
+                                            name="comment"></textarea>
                                     </label>
                                 </div>
                                 <div class="form__row-btn">
@@ -397,12 +455,14 @@
                                         <label class="form-controlls__btn">
                                             <input type="radio" name="radio" class="form-controlls__real-radio">
                                             <div class="form-controlls__fake-radio"></div>
-                                            <div class="form__block-title form-controlls__btn-title">Потребуется сдача</div>
+                                            <div class="form__block-title form-controlls__btn-title">Потребуется сдача
+                                            </div>
                                         </label>
                                         <label class="form-controlls__btn">
                                             <input type="radio" name="radio" class="form-controlls__real-radio" checked>
                                             <div class="form-controlls__fake-radio"></div>
-                                            <div class="form__block-title form-controlls__btn-title">Оплата по карте</div>
+                                            <div class="form__block-title form-controlls__btn-title">Оплата по карте
+                                            </div>
                                         </label>
                                     </div>
                                     <div class="form__row">
@@ -410,7 +470,8 @@
                                             <input class="form-controlls__real-checkbox" name="callback" type="checkbox"
                                                 hidden checked>
                                             <div class="form-controlls__fake-checkbox"></div>
-                                            <div class="form__block-title form-controlls__btn-title">Не перезванивать</div>
+                                            <div class="form__block-title form-controlls__btn-title">Не перезванивать
+                                            </div>
                                         </label>
                                     </div>
                                     <div class="form__row">
@@ -471,8 +532,8 @@
                         </div>
                     </div>
                 </footer>
+            </section>
         </div>
-        </section>
     </div>
     <nav class="fixed-menu">
         <ul class="fixed-menu__list">
@@ -488,6 +549,8 @@
         </ul>
     </nav>
     </div>
+    <script src="./js/acco_team.js"></script>
+    <script src="./js/acco_menu.js"></script>
 </body>
 
 </html>

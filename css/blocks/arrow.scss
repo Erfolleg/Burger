@@ -1,8 +1,28 @@
-.arrow__down {
-    background: url('../img/icons/arrow-down.svg') center center no-repeat;
+.arrow-scroll {
+    &__left {
+        position: absolute;
+        top: 40%;
+        left: 2%;
+    }
+    &__right {
+        position: absolute;
+        top: 40%;
+        right: 2%;
+    }
+}
+
+.arrow-scroll__down {
     position: absolute;
-    bottom: 2%;
+    bottom: -8%;
     left: 50%;
+}
+
+.arrow-scroll__icon {
     width: rem(29px);
-    height: rem(16px);
+    &-left {
+        transform: rotate(90deg);
+    }
+    &-right {
+        transform: rotate(-90deg);
+    }
 }

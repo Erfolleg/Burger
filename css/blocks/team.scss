@@ -32,10 +32,11 @@
 
 .team-accordeon__item {
     margin-bottom: rem(25px);
+    transition: height .3s;
     &:last-child {
         margin-bottom: 0;
     }
-    &__active {
+    &.active {
         .team-accordeon__trigger {
             color: $yellow;
             &::before {
@@ -43,7 +44,7 @@
             }
         }
         .team-accordeon__content {
-            display: flex;
+            height: 100%;
             @include tablets() {
                 flex-direction: column;
                 align-items: center;
@@ -85,7 +86,14 @@
 }
 
 .team-accordeon__content {
-    display: none;
+    display: flex;
+    overflow: hidden;
+    height: 0;
+    
+    @include tablets() {
+        flex-direction: column;
+        align-items: center;
+    }
    }
 
 .team-accordeon__pic {
