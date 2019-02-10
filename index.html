@@ -125,7 +125,60 @@
                 <div class="container burger__container">
                     <div class="burger__content">
                         <div class="burger__content-img">
-                            <img src="./img/content/burger/dark-burger.png" alt="dark_beef_burger" class="burger__img">
+                            <div class="burger__products">
+                                <div class="burger__products-close"></div>
+                                <ul class="burger__products-list">
+                                    <li class="burger__products-item">
+                                        <div class="burger__products-img">
+                                            <svg class="burger__products-img_icon">
+                                                <use xlink:href="./css/blocks/sprite.svg#beef"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="burger__products-img">
+                                            <svg class="burger__products-img_icon">
+                                                <use xlink:href="./css/blocks/sprite.svg#buns"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="burger__products-img">
+                                            <svg class="burger__products-img_icon">
+                                                <use xlink:href="./css/blocks/sprite.svg#salad"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="burger__products-img">
+                                            <svg class="burger__products-img_icon">
+                                                <use xlink:href="./css/blocks/sprite.svg#sauce"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="burger__products-img">
+                                            <svg class="burger__products-img_icon">
+                                                <use xlink:href="./css/blocks/sprite.svg#cucumber"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="burger__products-img">
+                                            <svg class="burger__products-img_icon">
+                                                <use xlink:href="./css/blocks/sprite.svg#cheese"></use>
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <li class="burger__products-item">
+                                        <div class="burger__products-composition">Говядина</div>
+                                        <div class="burger__products-composition">Булочки</div>
+                                        <div class="burger__products-composition">Зелень</div>
+                                        <div class="burger__products-composition">Соус</div>
+                                        <div class="burger__products-composition">Овощи</div>
+                                        <div class="burger__products-composition">Сыр</div>
+                                    </li>
+                                    <li class="burger__products-item">
+                                        <div class="burger__products-gramm">300 г</div>
+                                        <div class="burger__products-gramm">100 г</div>
+                                        <div class="burger__products-gramm">70 г</div>
+                                        <div class="burger__products-gramm">150 г</div>
+                                        <div class="burger__products-gramm">200 г</div>
+                                        <div class="burger__products-gramm">80 г</div>
+                                    </li>
+                                </ul>
+                            </div>
+
                             <a href="#" class="burger__composition">
                                 <svg class="burger__composition-icon_burger">
                                     <use xlink:href="./css/blocks/sprite.svg#burger"></use>
@@ -139,6 +192,7 @@
                                 </svg>
                                 <div class="burger__composition-text burger__composition-text_kkal">ккал</div>
                             </div>
+                            <img src="./img/content/burger/dark-burger.png" alt="dark_beef_burger" class="burger__img">
                         </div>
                         <div class="burger__content-text">
                             <div class="title burger__content-title">Dark BEEF Burger</div>
@@ -219,6 +273,7 @@
                     </ul>
                 </div>
             </section>
+
             <section class="section menu">
                 <div class="title title__menu section__title-menu">Меню</div>
                 <ul class="menu-accordeon__list">
@@ -293,6 +348,7 @@
                     </li>
                 </ul>
             </section>
+
             <section class="section reviews">
                 <ul class="reviews__list">
                     <li class="reviews__item" style="background-image: url('./img/content/reviews/photo1.jpg')">
@@ -401,6 +457,7 @@
                     </li>
                 </ul>
             </section>
+
             <section class="section section_centered order">
                 <div class="container">
                     <div class="title">Закажите доставку</div>
@@ -485,6 +542,7 @@
                     </form>
                 </div>
             </section>
+
             <section class="section contacts">
                 <div class="map" style="background-image: url('./img/map.jpg')"></div>
                 <footer class="footer">
@@ -535,6 +593,40 @@
             </section>
         </div>
     </div>
+    <div class="humburger-menu">
+        <div class="humburger-menu__logo">
+            <svg class="humburger-menu__logo-icon">
+                <use xlink:href="./css/blocks/sprite.svg#logo"></use>
+            </svg>
+        </div>
+        <nav class="humburger-menu__nav">
+            <ul class="humburger-menu__list">
+                <li class="humburger-menu__item">
+                    <a href="#" class="humburger-menu__link">О нас</a>
+                </li>
+                <li class="humburger-menu__item">
+                    <a href="#" class="humburger-menu__link">Бургеры</a>
+                </li>
+                <li class="humburger-menu__item">
+                    <a href="#" class="humburger-menu__link">Команда</a>
+                </li>
+                <li class="humburger-menu__item">
+                    <a href="#" class="humburger-menu__link">Меню</a>
+                </li>
+                <li class="humburger-menu__item">
+                    <a href="#" class="humburger-menu__link">Отзывы</a>
+                </li>
+                <li class="humburger-menu__item">
+                    <a href="#" class="humburger-menu__link">Как мы работаем</a>
+                </li>
+                <li class="humburger-menu__item">
+                    <a href="#" class="humburger-menu__link">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="humburger-menu__close">
+        </div>
+    </div>
     <nav class="fixed-menu">
         <ul class="fixed-menu__list">
             <li class="fixed-menu__item"></li>
@@ -549,8 +641,7 @@
         </ul>
     </nav>
     </div>
-    <script src="./js/acco_team.js"></script>
-    <script src="./js/acco_menu.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

@@ -7,18 +7,44 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    @include tablets() {
+        width: 74%;
+    }
+    @include phones() {
+        width: 98%;
+    }
 }
 
 .burger__content {
-    width: 94%;
     display: flex;
     align-items: center;
+    @include tablets() {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     &-img {
-        flex: 1;
+        width: 50%;
         position: relative;
+        @include tablets() {
+            width: 100%;
+            height: 50%;
+        }
+        @include phones() {
+            width: 85%;
+            margin-bottom: 25px;
+        }
     }
     &-text {
-        flex: 1;
+        width: 50%;
+        @include tablets() {
+            width: 100%;
+            height: 50%;
+            text-align: center;
+        }
+        @include phones() {
+            width: 85%;
+        }
     }
     &-title {
         color: #ffffff;
@@ -26,6 +52,10 @@
         font-size: 72px;
         font-weight: 400;
         line-height: 0.9;
+        @include phones() {
+            font-size: 50px;
+            line-height: 1.053;
+        }
     }
     &-description {
         color: #ffffff;
@@ -39,6 +69,7 @@
         display: flex;
         flex-direction: row;
         align-items: baseline;
+        justify-content: center;
     }
     &-amount {
         color: #e35028;
@@ -60,23 +91,152 @@
         }
     }
 }
+.burger__products {
+    display: none;
+}
+.burger__products-close {
+    @include tablets() {
+        position: absolute;
+        right: 160px;
+        top: 130px;
+        width: rem(20px);
+        height: rem(20px);
+        opacity: 0.7;
+        z-index: 6;
+        &:before,
+        &:after {
+            position: absolute;
+            left: rem(15px);
+            content: '';
+            height: rem(20px);
+            width: rem(3px);
+            background-color: #e35028;
+            opacity: 0.7;
+            border-radius: rem(3px);
+        }
+        &:before {
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+    @include phones() {
+        right: 30px;
+        top: 70px;
+    }
+}
+
+.burger__products-list {
+    display: flex;
+    background-color: #ffffff;
+    opacity: 0.9;
+    border-radius: 5px;
+    padding: 20px;
+    position: absolute;
+    flex-direction: row;
+    top: -70px;
+    left: 77px;
+    @include tablets() {
+        z-index: 5;
+        top: 116px;
+        padding-right: 100px;
+    }
+    @include phones() {
+        top: 51px;
+        left: 65px;
+        padding-right: 78px;
+    }
+}
+
+.burger__products-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.burger__products-img {
+    width: 50px;
+    height: 30px;
+    margin-right: 25px;
+    margin-bottom: 22px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &_icon {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.burger__products-composition {
+    color: #2f3234;
+    font-family: 'Ubuntu';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.714;
+    margin-right: 60px;
+    margin-bottom: 30px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.burger__products-gramm {
+    color: #2f3234;
+    font-family: 'Ubuntu';
+    font-size: 14px;
+    line-height: 1.714;
+    font-weight: 300;
+    margin-bottom: 30px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
 
 .burger__img {
-    background: center center / cover no-repeat;
     max-width: 100%;
+    @include tablets() {
+        position: absolute;
+        top: 190px;
+        left: 5%;
+    }
+    @include phones() {
+        top: 155px;
+        left: initial;
+    }
 }
 
 .burger__composition {
     position: absolute;
-    top: -100px;
+    top: -70px;
+    left: -13px;
     text-decoration: none;
     border-radius: 5px;
     background-color: #e35028;
     opacity: 0.4;
     text-align: center;
+    @include tablets() {
+        top: 116px;
+    }
+    @include phones() {
+        top: 51px;
+        left: -25px;
+    }
     &-icon_img {
         position: absolute;
         height: 40%;
+        left: -13px;
+        bottom: -140px;
+        @include tablets() {
+            top: 116px;
+            right: 50px;
+            bottom: initial;
+            left: initial;
+        }
+        @include phones() {
+            top: 51px;
+            right: -25px;
+        }
     }
     &-text {
         color: #ffffff;
@@ -86,11 +246,13 @@
         padding-bottom: 6px;
         text-align: center;
     }
-
     &-icon_numbers {
         position: absolute;
-        top: 30%;
+        top: 25%;
         left: 30%;
+        @include tablets() {
+            top: 13%;
+        }
     }
 }
 
