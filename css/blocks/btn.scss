@@ -25,4 +25,11 @@
             background-color: #1f2122;
         }
     }
+
+    &__burger {
+        display: flex;
+        align-items: center;
+        border: none;
+        
+    }
 }

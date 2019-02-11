@@ -1,0 +1,294 @@
+.burger {
+    background: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%, #f9b43b 100%);
+    position: relative;
+}
+
+.burger__content-list {
+    height: 100%;
+    @include tablets() {
+        width: 74%;
+        left: 13%;
+        position: absolute;
+    }
+    @include phones() {
+        width: 98%;
+        position: initial;
+    }
+}
+
+.burger__content-item {
+    height: 100%;
+    @include tablets() {
+        width: 100%;
+    }
+}
+
+.burger__container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    @include tablets() {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.burger__content {
+    &-img {
+        width: 50%;
+        position: relative;
+        @include tablets() {
+            width: 100%;
+            height: 50%;
+        }
+        @include phones() {
+            width: 85%;
+            margin-bottom: 25px;
+        }
+    }
+    &-text {
+        width: 50%;
+        @include tablets() {
+            width: 100%;
+            height: 50%;
+            text-align: center;
+        }
+        @include phones() {
+            width: 85%;
+        }
+    }
+    &-title {
+        color: #ffffff;
+        font-family: 'Gagalin';
+        font-size: 72px;
+        font-weight: 400;
+        line-height: 0.9;
+        @include phones() {
+            font-size: 50px;
+            line-height: 1.053;
+        }
+    }
+    &-description {
+        color: #ffffff;
+        font-family: 'Ubuntu';
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.714;
+        margin-bottom: 35px;
+    }
+    &-order {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+    }
+    &-amount {
+        color: #e35028;
+        font-family: 'Gagalin';
+        font-weight: 400;
+        line-height: 0.390;
+        font-size: 72px;
+        letter-spacing: -1.79px;
+        max-width: 100%;
+        &_rub {
+            color: #e35028;
+            font-family: 'Gagalin';
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 0.936;
+            letter-spacing: -0.75px;
+            margin-right: 30px;
+            max-width: 100%;
+        }
+    }
+}
+
+.burger__products {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+
+.burger__products-close {
+    @include tablets() {
+        position: absolute;
+        left: 395px;
+        top: 30px;
+        width: rem(20px);
+        height: rem(20px);
+        opacity: 0.7;
+        z-index: 6;
+        &:before,
+        &:after {
+            position: absolute;
+            left: rem(15px);
+            content: '';
+            height: rem(20px);
+            width: rem(3px);
+            background-color: #e35028;
+            opacity: 0.7;
+            border-radius: rem(3px);
+        }
+        &:before {
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+    @include phones() {
+        right: 30px;
+        top: 70px;
+    }
+}
+
+.burger__products-list {
+    display: flex;
+    background-color: #ffffff;
+    opacity: 0.9;
+    border-radius: 5px;
+    padding: 20px;
+    position: absolute;
+    flex-direction: row;
+    top: 0;
+    left: 90px;
+    @include tablets() {
+        z-index: 5;
+        padding-right: 100px;
+    }
+    @include phones() {
+        padding-right: 78px;
+    }
+}
+
+.burger__products-item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.burger__products-img {
+    width: 50px;
+    height: 30px;
+    margin-right: 25px;
+    margin-bottom: 22px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &_icon {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.burger__products-composition {
+    color: #2f3234;
+    font-family: 'Ubuntu';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.714;
+    margin-right: 60px;
+    margin-bottom: 30px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.burger__products-gramm {
+    color: #2f3234;
+    font-family: 'Ubuntu';
+    font-size: 14px;
+    line-height: 1.714;
+    font-weight: 300;
+    margin-bottom: 30px;
+    width: 35px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.burger__img {
+    max-width: 100%;
+    @include tablets() {
+        position: absolute;
+        top: 190px;
+        left: 5%;
+    }
+    @include phones() {
+        top: 155px;
+        left: initial;
+    }
+}
+
+.burger__composition {
+    position: absolute;
+    top: -70px;
+    left: -13px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #e35028;
+    opacity: 0.4;
+    text-align: center;
+    border: none;
+    &:hover {
+        opacity: 1;
+        .burger__products {
+            display: block;
+        }
+        @include tablets() {
+            display: none;
+        }
+    }
+    @include tablets() {
+        top: 116px;
+    }
+    @include phones() {
+        top: 51px;
+        left: -25px;
+    }
+    &-icon_img {
+        position: absolute;
+        height: 40%;
+        left: -13px;
+        bottom: -140px;
+        @include tablets() {
+            top: 116px;
+            right: 50px;
+            bottom: initial;
+            left: initial;
+        }
+        @include phones() {
+            top: 51px;
+            right: -25px;
+        }
+    }
+    &-text {
+        color: #ffffff;
+        font-family: 'Gagalin';
+        font-size: 14px;
+        font-weight: 400;
+        padding-bottom: 6px;
+        text-align: center;
+    }
+    &-icon_numbers {
+        position: absolute;
+        top: 25%;
+        left: 30%;
+        @include tablets() {
+            top: 13%;
+        }
+    }
+}
+
+.burger__composition-icon_burger {
+    width: 46px;
+    max-height: 100%;
+    margin: -33px 22px -57px 22px;
+}
+
+.burger__composition-icon_kkal {
+    width: 60px;
+    height: 60px;
+}
