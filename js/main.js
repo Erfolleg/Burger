@@ -64,23 +64,20 @@ const buttonsComposition = document.querySelector('.burger__composition');
 const composition = document.querySelector('.burger__products');
 const width = screen.width;
 const closeComposition = document.querySelector('.burger__products-close');
-const styleComposition = getComputedStyle(composition);
-const styleCompositionBlock = styleComposition.display
 buttonsComposition.addEventListener('click', (e) => {
     e.stopPropagation();
     e.preventDefault();
-    if (styleCompositionBlock == 'none') {
-        composition.style.display = 'block';
+    if (composition.classList.contains('active')) {
+        composition.classList.remove('active');
     }
     else {
         if (width <= 768) {
             closeComposition.addEventListener('click', () => {
-                composition.removeAttribute('style');
-                // composition.style.display = 'none';
+                composition.classList.remove('active');
             })
+        } else {}
+        composition.classList.add('active');
 
-                composition.removeAttribute('style');
-        }
     }
 })
 

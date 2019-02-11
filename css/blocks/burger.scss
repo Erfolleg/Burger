@@ -93,6 +93,9 @@
 }
 .burger__products {
     display: none;
+    &.active {
+        display: block;
+    }
 }
 .burger__products-close {
     @include tablets() {
