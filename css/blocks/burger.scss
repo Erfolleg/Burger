@@ -3,26 +3,38 @@
     position: relative;
 }
 
-.burger__container {
+.burger__content-list {
     height: 100%;
-    display: flex;
-    justify-content: center;
     @include tablets() {
         width: 74%;
+        left: 13%;
+        position: absolute;
     }
     @include phones() {
         width: 98%;
+        position: initial;
     }
 }
 
-.burger__content {
+.burger__content-item {
+    height: 100%;
+    @include tablets() {
+        width: 100%;
+    }
+}
+
+.burger__container {
     display: flex;
     align-items: center;
+    height: 100%;
     @include tablets() {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+}
+
+.burger__content {
     &-img {
         width: 50%;
         position: relative;
@@ -96,15 +108,14 @@
     display: none;
     &.active {
         display: block;
-        opacity: 1.4;
     }
 }
 
 .burger__products-close {
     @include tablets() {
         position: absolute;
-        right: 160px;
-        top: 130px;
+        left: 395px;
+        top: 30px;
         width: rem(20px);
         height: rem(20px);
         opacity: 0.7;
@@ -220,10 +231,14 @@
     background-color: #e35028;
     opacity: 0.4;
     text-align: center;
+    border: none;
     &:hover {
         opacity: 1;
         .burger__products {
             display: block;
+        }
+        @include tablets() {
+            display: none;
         }
     }
     @include tablets() {

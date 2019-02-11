@@ -6,9 +6,13 @@ const closeMenu = document.querySelector('.humburger-menu__close');
 buttons.addEventListener('click', () => {
 
     openMenu.style.display = 'block';
+    var _body = document.getElementsByTagName('body')[0];
+    _body.style.overflow = "hidden";
 })
 closeMenu.addEventListener('click', () => {
     openMenu.style.display = 'none';
+    var _body = document.getElementsByTagName('body')[0];
+    _body.style.overflow = "visible";
 })
 
 //////////////////////////////////////////////////////
@@ -62,22 +66,31 @@ for (itemMenu of itemsMenu) {
 
 const buttonsComposition = document.querySelector('.burger__composition');
 const composition = document.querySelector('.burger__products');
-const width = screen.width;
 const closeComposition = document.querySelector('.burger__products-close');
-buttonsComposition.addEventListener('click', (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    if (composition.classList.contains('active')) {
-        composition.classList.remove('active');
-    }
-    else {
-        if (width <= 768) {
-            closeComposition.addEventListener('click', () => {
-                composition.classList.remove('active');
-            })
-        } else {}
+const width = document.body.clientWidth;
+if (width <= '768') {
+    buttonsComposition.addEventListener('click', () => {
         composition.classList.add('active');
+    })
 
-    }
-})
+}
+
+
+
+
+// if (width <= '768') {
+//     buttonsComposition.addEventListener('click', (composition) => {
+//         composition.classList.add('active');
+
+//         // if (composition.classList.contains('active')) {
+//         //     composition.classList.remove('active');
+//         // } else {
+//         //     closeComposition.addEventListener('click', () => {
+//         //         composition.classList.remove('active');
+//         //     })
+//         // }
+
+//     })
+// }
+
 
