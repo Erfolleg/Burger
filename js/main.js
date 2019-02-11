@@ -21,14 +21,14 @@ for (const item of items) {
         const delHref = curItem.querySelector('.team-accordeon__trigger');
         delHref.removeAttribute('href', '#');
 
-        if (curItem.classList.contains('active')) {
-            curItem.classList.remove('active');
+        if (curItem.classList.contains('team-accordeon__item-active')) {
+            curItem.classList.remove('team-accordeon__item-active');
 
         } else {
             for (const elem of items) {
-                elem.classList.remove('active');
+                elem.classList.remove('team-accordeon__item-active');
             }
-            curItem.classList.add('active');
+            curItem.classList.add('team-accordeon__item-active');
 
         }
 
