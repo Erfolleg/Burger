@@ -813,29 +813,33 @@
             <section class="section section_centered order">
                 <div class="container">
                     <div class="title">Закажите доставку</div>
-                    <form action="" id="order-form" method="post" class="form">
+                    <form action="" id="order-form" class="form">
                         <div class="order-form">
                             <div class="form__column">
                                 <div class="form__row">
                                     <label class="form__block">
                                         <div class="form__block-title">Имя</div>
-                                        <input class="form__block-input" name="name" type="text" placeholder="">
+                                        <input class="form__block-input" name="name" type="text" placeholder="" required>
+                                        <div class="error"></div>
                                     </label>
                                     <label class="form__block">
                                         <div class="form__block-title">Телефон</div>
-                                        <input class="form__block-input" name="phone" type="number" placeholder="">
+                                        <input class="form__block-input" name="phone" type="number" placeholder="" required>
+                                        <div class="error"></div>
                                     </label>
                                 </div>
                                 <div class="form__row">
                                     <label class="form__block">
                                         <div class="form__block-title">Улица</div>
-                                        <input class="form__block-input" name="street" type="text" placeholder="">
+                                        <input class="form__block-input" name="street" type="text" placeholder="" required>
+                                        <div class="error"></div>
                                     </label>
                                 </div>
                                 <div class="form__row">
                                     <label class="form__block">
                                         <div class="form__block-title">Дом</div>
-                                        <input class="form__block-input" name="home" type="text" placeholder="">
+                                        <input class="form__block-input" name="home" type="text" placeholder="" required>
+                                        <div class="error"></div>
                                     </label>
                                     <label class="form__block">
                                         <div class="form__block-title">Корпус</div>
@@ -1010,11 +1014,10 @@
     </div>
 
     <div class="popup__order">
-        <div class="overlay">
-            <div class="popup-container">
-                <div class="popup__content">
-                   
-                </div>
+        <div class="overlay-order">
+            <div class="popup-container-order">
+                <div class="popup__content-order"></div>
+                <div class="btn btn-modal"></div>
             </div>
         </div>
     </div>

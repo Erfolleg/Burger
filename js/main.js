@@ -120,13 +120,11 @@ leftBtn.addEventListener('click', e => {
 // modal
 // отзывы
 const reviewsList = document.querySelector('.reviews__list');
-
 const popupReviews = document.querySelector('.popup__reviews');
 const popupTitle = document.querySelector('.popup__content-title');
 const popupText = document.querySelector('.popup__content-text');
 const closePopupRev = document.querySelector('.popup__close-reviews');
 const overlay = document.querySelector('.overlay');
-
 
 reviewsList.addEventListener('click', e => {
     let elementRev = e.target;
@@ -143,8 +141,6 @@ reviewsList.addEventListener('click', e => {
         popupReviews.style.display = 'block';
     }
 });
-
-
 
 document.addEventListener('keyup', e => {
     let keyName = e.keyCode;
@@ -163,7 +159,6 @@ closePopupRev.addEventListener('click', e => {
     _body.style.overflow = "visible";
 })
 
-
 overlay.addEventListener('click', e => {
     if (e.target === overlay) {
         popupReviews.style.display = 'none';
@@ -172,50 +167,76 @@ overlay.addEventListener('click', e => {
     }
 })
 
-// const reviewsBtn = document.querySelector('.reviews__item');
-// const template = document.querySelector('#modal-template').innerHTML;
+/////////////////////////////////////////////////////////////////////////////////////
+///// модал форма сообщения
 
-// const modal = createModal();
+const popupOrder = document.querySelector('.popup__order');
+const closeBtnModal = document.querySelector('.btn-modal');
+const formBtn = document.querySelector('.form__row-button');
+const formMy = document.querySelector('#order-form');
+const popupContentModal = document.querySelector('.popup__content-order');
+const overlayOrder = document.querySelector('.overlay-order');
+
+formBtn.addEventListener('click', e => {
+    e.preventDefault();
+    const formData = new FormData(formMy);
+    const xhr = new XMLHttpRequest();
+    xhr.responseText = 'JSON';
+    xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+    xhr.send(formData);
+    xhr.addEventListener('load', () => {
+        popupOrder.style.display = 'block';
+        var _body = document.getElementsByTagName('body')[0];
+        _body.style.overflow = "hidden";
+
+        if (xhr.status >= 400) {
+            popupContentModal.innerHTML = 'Произошла ошибка';
+        } else {
+            popupContentModal.innerHTML = 'Сообщение отправлено';
+        }
 
 
-//     reviewsBtn.addEventListener('click', e => {
-//         event.preventDefault();
+    })
+    
+});
 
-//         modal.setContent();
-//         modal.open();
-//     })
+closeBtnModal.addEventListener('click', e => {
+    popupOrder.style.display = 'none';
+    var _body = document.getElementsByTagName('body')[0];
+    _body.style.overflow = "visible";
+})
 
+overlayOrder.addEventListener('click', e => {
+    if (e.target === overlayOrder) {
+        popupOrder.style.display = 'none';
+        var _body = document.getElementsByTagName('body')[0];
+        _body.style.overflow = "visible";
+    }
+})
+// function validateForm(form) {
+//     let valid = true;
 
+//     if (!validateForm(form.elements.name)) {
+//         valid = false;
+//     }
+//     if (!validateForm(form.elements.phone)) {
+//         valid = false;
+//     }
+//     if (!validateForm(form.elements.street)) {
+//         valid = false;
+//     }
+//     if (!validateForm(form.elements.home)) {
+//         valid = false;
+//     }
+//     return valid;
+// };
 
-// function createModal() {
-//     const container = document.createElement('div');
-//     container.className = 'popup';
-//     container.innerHTML = template;
-
-//     const contentBlock = container.querySelector('.popup-content');
-
-//     const closeBtnDagger = document.querySelector('.popup__close-reviews');
-//     closeBtnDagger.addEventListener('click', e => {
-//         event.preventDefault();
-//         document.body.removeChild(container);
-//     })
-
-//     const overlay = container.querySelector('.overlay');
-//     overlay.addEventListener('click', e => {
-//         if (e.target === overlay) {
-//             closeBtnВagger.click();
-//         }
-//     })
-
-//     return {
-//         open() {
-//             document.body.appendChild(container);
-//         },
-//         close() {
-//             closeBtnВagger.click();
-//         },
-//         setContent(content) {
-//             contentBlock.innerHTML = content;
-//         }
-//     };
-// }
+// function validateField(field) {
+//     if (!field.checkValidity()) {
+//         field.nextElementSibling.textContent = field.validationMessage;
+//         return false;
+//     } else {
+//         field.nextElementSibling.textContent = '';
+//         return true;
+//     }
+// };

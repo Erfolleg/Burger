@@ -25,11 +25,17 @@
             background-color: #1f2122;
         }
     }
-
     &__burger {
         display: flex;
         align-items: center;
         border: none;
-        
+    }
+    &-modal {
+        &::before {
+            content: "Закрыть";
+        }
+        text-align: center;
+        width: 100px;
+        margin: 0 auto;
     }
 }
