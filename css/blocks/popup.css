@@ -1,0 +1,24 @@
+.reviews_popup-close {
+  position: absolute;
+  right: rem(30px);
+  top: rem(30px);
+  width: rem(15px);
+  height: rem(15px);
+  opacity: 0.7;
+  cursor: pointer; }
+  .reviews_popup-close:before, .reviews_popup-close:after {
+    position: absolute;
+    left: rem(15px);
+    content: '';
+    height: rem(20px);
+    width: rem(3px);
+    background-color: red;
+    border-radius: rem(3px); }
+  .reviews_popup-close:before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .reviews_popup-close:after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
