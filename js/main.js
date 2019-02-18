@@ -67,18 +67,16 @@ const composition = document.querySelector('.burger__products');
 const closeComposition = document.querySelector('.burger__products-close');
 const width = document.body.clientWidth;
 if (width <= '768') {
-    buttonsComposition.addEventListener('click', () => {
-        composition.classList.add('active');
+    buttonsComposition.addEventListener('click', e => {
+        composition.style.display = 'block';
+        composition.style.opacity = 1;
     })
-
-}
-
-if (width <= '768') {
-    buttonsComposition.addEventListener('click', (composition) => {
-        composition.classList.add('active');
-
+    closeComposition.addEventListener('click', e => {
+        composition.style.display = 'none';
+        composition.style.opacity = 0.4;
     })
 }
+
 
 ////////////////////////////////////////////////////////////////////
 // слайдер Бургеры

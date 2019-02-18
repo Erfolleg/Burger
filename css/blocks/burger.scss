@@ -111,9 +111,6 @@
 
 .burger__products {
     display: none;
-    &.active {
-        display: block;
-    }
 }
 
 .burger__products-close {
@@ -124,7 +121,7 @@
         width: rem(20px);
         height: rem(20px);
         opacity: 0.7;
-        z-index: 6;
+        z-index: 10;
         cursor: pointer;
         &:before,
         &:after {
@@ -145,8 +142,8 @@
         }
     }
     @include phones() {
-        right: 30px;
-        top: 70px;
+        left: 390px;
+        top: 10px;
     }
 }
 
@@ -217,7 +214,6 @@
 
 .burger__img {
     width: 100%;
-
     &-icon {
         max-width: 100%;
         @include tablets() {
@@ -248,9 +244,6 @@
         opacity: 1;
         .burger__products {
             display: block;
-        }
-        @include tablets() {
-            display: none;
         }
     }
     @include tablets() {
