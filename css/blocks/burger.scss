@@ -217,7 +217,9 @@
 
 .burger__img {
     width: 100%;
+
     &-icon {
+        max-width: 100%;
         @include tablets() {
             position: absolute;
             bottom: 0;
