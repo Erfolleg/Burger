@@ -29,18 +29,17 @@
     }
 }
 
-
 .menu-accordeon__item {
     display: flex;
     height: 100%;
     justify-content: flex-end;
-   
-    &.active {
+    &-active {
+        ;
         .menu-accordeon__trigger-text {
             color: $yellow;
         }
         .menu-accordeon__content {
-            width: 80%;
+            width: 540px;
             @include phones () {
                 width: 100%;
                 .menu-accordeon__close {
@@ -89,7 +88,6 @@
     position: relative;
     background: center center / cover no-repeat;
     background-color: rgba(20, 20, 20, 0.7);
-    
 }
 
 .menu-accordeon__trigger-text {
