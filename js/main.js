@@ -17,24 +17,19 @@ closeMenu.addEventListener('click', () => {
 
 //////////////////////////////////////////////////////
 ///   вертикальный аккордеон команда
-const items = document.querySelectorAll('.team-accordeon__item');
-
-for (const item of items) {
-    item.addEventListener("click", (e) => {
+const itemsCommand = document.querySelectorAll('.team-accordeon__item');
+for (const itemCommand of itemsCommand) {
+    itemCommand.addEventListener("click", (e) => {
         e.preventDefault();
-        const curItem = e.currentTarget;
-
-        if (curItem.classList.contains('team-accordeon__item-active')) {
-            curItem.classList.remove('team-accordeon__item-active');
-
+        const curItemCommand = e.currentTarget;
+        if (curItemCommand.classList.contains('team-accordeon__item-active')) {
+            curItemCommand.classList.remove('team-accordeon__item-active');
         } else {
-            for (const elem of items) {
-                elem.classList.remove('team-accordeon__item-active');
+            for (const elemCommand of itemsCommand) {
+                elemCommand.classList.remove('team-accordeon__item-active');
             }
-            curItem.classList.add('team-accordeon__item-active');
-
+            curItemCommand.classList.add('team-accordeon__item-active');
         }
-
     });
 }
 
@@ -82,16 +77,22 @@ if (width <= '768') {
 // слайдер Бургеры
 
 const itemsBurger = document.querySelector('.burger__content-list');
+const widthContent = document.querySelector('.burger__content');
 const rightBtn = document.querySelector('.arrow-scroll__right');
 const leftBtn = document.querySelector('.arrow-scroll__left');
+const burgerContentItems = document.querySelectorAll('.burger__content-item');
 
-const step = itemsBurger.firstElementChild.getBoundingClientRect().width;
 
+let step = widthContent.offsetWidth;
+console.log(step);
+if (step < 1100) {
+    for (burgerContentItem of burgerContentItems)
+    burgerContentItem.style.width = step + 'px';
+}
 const slidesInView = 1;
 const maxRight = (itemsBurger.children.length - slidesInView) * step;
 const minleft = 0;
 let currentStep = 0;
-
 rightBtn.addEventListener('click', e => {
 
     if (currentStep < maxRight) {
@@ -177,25 +178,33 @@ const overlayOrder = document.querySelector('.overlay-order');
 
 formBtn.addEventListener('click', e => {
     e.preventDefault();
-    const formData = new FormData(formMy);
-    const xhr = new XMLHttpRequest();
-    xhr.responseText = 'JSON';
-    xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-    xhr.send(formData);
-    xhr.addEventListener('load', () => {
-        popupOrder.style.display = 'block';
-        var _body = document.getElementsByTagName('body')[0];
-        _body.style.overflow = "hidden";
+    if (validateForm(formMy)) {
+        const name = formMy.elements.name.value;
+        const phone = formMy.elements.phone.value;
+        const comment = formMy.elements.comment.value;
+        const to = 'webdev@mail.ru';
+        var formData = new FormData();
+        formData.append('name', name);
+        formData.append('phone', phone);
+        formData.append('comment', comment);
+        formData.append('to', to);
+        const xhr = new XMLHttpRequest();
+        xhr.responseText = 'JSON';
+        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/');
+        xhr.send(formData);
+        xhr.addEventListener('load', () => {
+            popupOrder.style.display = 'block';
+            var _body = document.getElementsByTagName('body')[0];
+            _body.style.overflow = "hidden";
 
-        if (xhr.status >= 400) {
-            popupContentModal.innerHTML = 'Произошла ошибка';
-        } else {
-            popupContentModal.innerHTML = 'Сообщение отправлено';
-        }
+            if (xhr.status >= 400) {
+                popupContentModal.innerHTML = 'Произошла ошибка ' + xhr.status;
+            } else {
+                popupContentModal.innerHTML = 'Сообщение отправлено';
+            }
+        })
+    }
 
-
-    })
-    
 });
 
 closeBtnModal.addEventListener('click', e => {
@@ -211,30 +220,40 @@ overlayOrder.addEventListener('click', e => {
         _body.style.overflow = "visible";
     }
 })
-// function validateForm(form) {
-//     let valid = true;
 
-//     if (!validateForm(form.elements.name)) {
-//         valid = false;
-//     }
-//     if (!validateForm(form.elements.phone)) {
-//         valid = false;
-//     }
-//     if (!validateForm(form.elements.street)) {
-//         valid = false;
-//     }
-//     if (!validateForm(form.elements.home)) {
-//         valid = false;
-//     }
-//     return valid;
-// };
+function validateForm(formMy) {
+    let valid = true;
 
-// function validateField(field) {
-//     if (!field.checkValidity()) {
-//         field.nextElementSibling.textContent = field.validationMessage;
-//         return false;
-//     } else {
-//         field.nextElementSibling.textContent = '';
-//         return true;
-//     }
-// };
+    if (!validateField(formMy.elements.name)) {
+        valid = false;
+    }
+
+    if (!validateField(formMy.elements.phone)) {
+        valid = false;
+    }
+
+    if (!validateField(formMy.elements.comment)) {
+        valid = false;
+    }
+    if (!validateField(formMy.elements.street)) {
+        valid = false;
+    }
+    if (!validateField(formMy.elements.home)) {
+        valid = false;
+    }
+    if (!validateField(formMy.elements.appt)) {
+        valid = false;
+    }
+    return valid;
+}
+
+function validateField(field) {
+    if (!field.checkValidity()) {
+        field.nextElementSibling.textContent = field.validationMessage;
+        return false;
+    }
+    else {
+        field.nextElementSibling.textContent = '';
+        return true;
+    }
+}

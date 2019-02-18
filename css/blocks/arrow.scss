@@ -5,21 +5,28 @@
     &__left {
         position: absolute;
         top: 40%;
-        left: 2%;
+        left: -4%;
         z-index: 1;
+        @include tablets() {
+            left: 0;
+        }
     }
     &__right {
         position: absolute;
         top: 40%;
-        right: 2%;
+        right: -4%;
         z-index: 1;
+        @include tablets() {
+            right: 0;
+        }
     }
 }
 
 .arrow-scroll__down {
     position: absolute;
-    bottom: -8%;
+    bottom: 0;
     left: 50%;
+    height: 20%;
 }
 
 .arrow-scroll__icon {

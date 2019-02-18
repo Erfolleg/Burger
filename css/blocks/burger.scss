@@ -1,5 +1,9 @@
 .burger {
     background: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%, #f9b43b 100%);
+}
+
+.burger__container {
+    height: 100%;
     position: relative;
 }
 
@@ -27,12 +31,13 @@
     }
 }
 
-.burger__container {
+.burger__content {
     height: 100%;
     overflow: hidden;
     display: flex;
-    @include tablets() {
-        width: 78%;
+        @include tablets() {
+        width: 80%;
+        margin: 0 auto;
     }
     @include phones() {
         width: 100%;
