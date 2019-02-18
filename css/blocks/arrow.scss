@@ -6,11 +6,13 @@
         position: absolute;
         top: 40%;
         left: 2%;
+        z-index: 1;
     }
     &__right {
         position: absolute;
         top: 40%;
         right: 2%;
+        z-index: 1;
     }
 }
 
