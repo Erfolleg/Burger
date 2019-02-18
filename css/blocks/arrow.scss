@@ -2,6 +2,9 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    &:focus {
+        outline: none;
+    }
     &__left {
         position: absolute;
         top: 40%;
