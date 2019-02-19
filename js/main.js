@@ -35,34 +35,37 @@ for (const itemCommand of itemsCommand) {
 
 /////////////////////////////////////////////////////////////// 
 //////////меню аккордеон горизонтальный
-const menuAccoContent = document.querySelector('.menu-accordeon__content');
+const menuAccoContents = document.querySelector('.menu-accordeon__content');
 const itemsMenu = document.querySelectorAll('.menu-accordeon__item');
 const widthItemMenu = document.querySelector('.menu-accordeon__trigger');
 for (itemMenu of itemsMenu) {
     itemMenu.addEventListener('click', (e) => {
         e.preventDefault();
         const curItemMenu = e.currentTarget;
+        const targetMenu = e.target;
+        var contentMenu = targetMenu.nextElementSibling;
+        console.log(contentMenu);
         if (curItemMenu.classList.contains('menu-accordeon__item-active')) {
             curItemMenu.classList.remove('menu-accordeon__item-active');
-            menuAccoContent.style.width = 0;
+            contentMenu.style.width = 0;
         } else {
             for (const elemMenu of itemsMenu) {
                 elemMenu.classList.remove('menu-accordeon__item-active');
-                menuAccoContent.style.width = 0;
-            }
+                contentMenu.style.width = 0;
+            };
             curItemMenu.classList.add('menu-accordeon__item-active');
-            menuAccoContent.style.width = requestWidth + 'px';
-        }
-    })
+            contentMenu.style.width = requestWidth + 'px';
+        };
+
+    });
 }
 function calculateWidth() {
     let widthMenu = document.body.clientWidth;
     let itemsMenuLength = itemsMenu.length;
     let widthItemMenu = itemMenu.offsetWidth;
     return (widthMenu - (widthItemMenu * itemsMenuLength));
-}
+};
 let requestWidth = calculateWidth();
-// menuAccoContent.style.width = requestWidth + 'px';
 
 
 ///////////////////////////////////////////////////////////////

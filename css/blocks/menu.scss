@@ -34,12 +34,14 @@
     height: 100%;
     justify-content: flex-end;
     &-active {
-        ;
         .menu-accordeon__trigger-text {
             color: $yellow;
         }
         .menu-accordeon__content {
-            width: 540px;
+            width: 50%;
+            @include tablets () {
+                width: 100%;
+            }
             @include phones () {
                 width: 100%;
                 .menu-accordeon__close {
