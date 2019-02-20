@@ -35,32 +35,67 @@ for (const itemCommand of itemsCommand) {
 
 /////////////////////////////////////////////////////////////// 
 //////////меню аккордеон горизонтальный
-const menuAccoContents = document.querySelectorAll('.menu-accordeon__content');
-const itemsMenu = document.querySelectorAll('.menu-accordeon__item');
-const widthItemMenu = document.querySelector('.menu-accordeon__trigger');
-for (itemMenu of itemsMenu) {
-    itemMenu.addEventListener('click', (e) => {
+
+const accoMenuList = document.querySelector('.menu-accordeon__list');
+const accoMenuItem = document.querySelectorAll('.menu-accordeon__item');
+let accoMenuItemLength = accoMenuItem.length;
+const accoMenuClose = document.querySelector('.menu-accordeon__close');
+
+accoMenuList.addEventListener('click', function (e) {
+    for (let i = 0; i < accoMenuItemLength; i++) {
+        accoMenuItem[i].classList.remove('menu-accordeon__item-active');
+    }
+});
+
+for (let i = 0; i < accoMenuItemLength; i++) {
+    accoMenuItem[i].addEventListener('click', function (e) {
+        e.stopPropagation();
         e.preventDefault();
-        const targetMenu = e.target;
-        var contentMenu = targetMenu.nextElementSibling;
-        if (contentMenu.style.width === styleWidth) {
-            contentMenu.style.width = 0;
+
+        if (accoMenuItem[i].classList.contains('menu-accordeon__item-active')) {
+            accoMenuItem[i].classList.remove('menu-accordeon__item-active');
         } else {
-            for (const menuAccoContent of menuAccoContents) {
-                menuAccoContent.style.width = 0;
-            };
-            contentMenu.style.width = styleWidth;
-        };
+            for (let i = 0; i < accoMenuItemLength; i++) {
+                accoMenuItem[i].classList.remove('menu-accordeon__item-active');
+            }
+            accoMenuItem[i].classList.add('menu-accordeon__item-active');
+        }
     });
-}
-function calculateWidth() {
-    let widthMenu = document.body.clientWidth;
-    let itemsMenuLength = itemsMenu.length;
-    let widthItemMenu = itemMenu.offsetWidth;
-    return (widthMenu - (widthItemMenu * itemsMenuLength));
 };
-let requestWidth = calculateWidth();
-let styleWidth = requestWidth + 'px'
+
+accoMenuClose.addEventListener('click', function (e) {
+    accoMenuItem.classList.remove('menu-accordeon__item-active');
+});
+
+
+
+
+// const menuAccoContents = document.querySelectorAll('.menu-accordeon__content');
+// const itemsMenu = document.querySelectorAll('.menu-accordeon__item');
+// const widthItemMenu = document.querySelector('.menu-accordeon__trigger');
+// for (itemMenu of itemsMenu) {
+//     itemMenu.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         const targetMenu = e.target;
+//         var contentMenu = targetMenu.nextElementSibling;
+//         if (contentMenu.style.width === styleWidth) {
+//             contentMenu.style.width = 0;
+//         } else {
+//             for (const menuAccoContent of menuAccoContents) {
+//                 menuAccoContent.style.width = 0;
+//             };
+//             contentMenu.style.width = styleWidth;
+//         };
+//     });
+// }
+// function calculateWidth() {
+//     let widthMenu = document.body.clientWidth;
+//     let itemsMenuLength = itemsMenu.length;
+//     let widthItemMenu = itemMenu.offsetWidth;
+//     return (widthMenu - (widthItemMenu * itemsMenuLength));
+// };
+// let requestWidth = calculateWidth();
+// let styleWidth = requestWidth + 'px'
 
 
 
@@ -192,7 +227,7 @@ formBtn.addEventListener('click', e => {
         const name = formMy.elements.name.value;
         const phone = formMy.elements.phone.value;
         const comment = formMy.elements.comment.value;
-        const to = 'webdev@mail.ru';
+        const to = 'hisaev@gmail.com';
         var formData = new FormData();
         formData.append('name', name);
         formData.append('phone', phone);
@@ -233,26 +268,45 @@ overlayOrder.addEventListener('click', e => {
 
 function validateForm(formMy) {
     let valid = true;
+    const errors = document.querySelectorAll('.error');
 
     if (!validateField(formMy.elements.name)) {
         valid = false;
+        for (error of errors) {
+            error.style.display = 'block';
+        }
     }
 
     if (!validateField(formMy.elements.phone)) {
         valid = false;
+        for (error of errors) {
+            error.style.display = 'block';
+        }
     }
 
     if (!validateField(formMy.elements.comment)) {
         valid = false;
+        for (error of errors) {
+            error.style.display = 'block';
+        }
     }
     if (!validateField(formMy.elements.street)) {
         valid = false;
+        for (error of errors) {
+            error.style.display = 'block';
+        }
     }
     if (!validateField(formMy.elements.home)) {
         valid = false;
+        for (error of errors) {
+            error.style.display = 'block';
+        }
     }
     if (!validateField(formMy.elements.appt)) {
         valid = false;
+        for (error of errors) {
+            error.style.display = 'block';
+        }
     }
     return valid;
 }
@@ -266,4 +320,9 @@ function validateField(field) {
         field.nextElementSibling.textContent = '';
         return true;
     }
+}
+
+function numberOrder(){
+    if (event.keyCode != 43 && event.keyCode < 48 || event.keyCode > 57)
+    event.preventDefault();
 }
