@@ -8,7 +8,6 @@
         flex-direction: column;
         padding: 0 20%;
     }
-
     @include phones () {
         padding: 0 2%;
     }
@@ -17,15 +16,12 @@
 .form__column {
     flex: 1;
     margin-right: rem(20px);
-
     @include tablets() {
         margin-right: 0;
     }
     &:last-child {
         margin-right: 0;
     }
-
-    
 }
 
 .form__row {
@@ -50,7 +46,6 @@
     font-size: rem(14px);
     font-weight: 300;
     line-height: 1.714;
-
     @include phones () {
         font-size: rem(14px);
     }
@@ -166,7 +161,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        
     }
 }
 
@@ -174,4 +168,11 @@
     display: none;
     color: $red;
     font-size: 14px;
+}
+
+.input_number {
+    -moz-appearance: textfield;
+    &::-webkit-inner-spin-button {
+        display: none;
+    }
 }
