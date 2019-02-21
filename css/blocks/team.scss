@@ -32,7 +32,6 @@
 
 .team-accordeon__item {
     margin-bottom: rem(25px);
-    
     &:last-child {
         margin-bottom: 0;
     }
@@ -45,10 +44,8 @@
         }
         .team-accordeon__content {
             height: 100px;
-
-            
             @include tablets() {
-                height: 160px;
+                height: 203px;
                 flex-direction: column;
                 align-items: center;
             }
@@ -68,6 +65,7 @@
     margin-bottom: rem(10px);
     @include tablets() {
         display: inline-flex;
+        font-size: rem(24px);
     }
     &:before {
         content: "";
@@ -77,6 +75,9 @@
         top: rem(8px);
         width: 0;
         height: 0;
+        @include tablets() {
+            top: rem(18px);
+        }
     }
     &:before {
         border-top: rem(7px) solid $yellow;
@@ -96,23 +97,21 @@
     @include tablets() {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
-   }
-
-.team-accordeon__pic {
-    text-align: center;
-    width: 30%;
-    display: flex;
-    justify-content: center;
 }
 
+.team-accordeon__pic {}
+
 .team-accordeon__img {
-    width: rem(100px);
-    height: rem(100px);
+    width: 100px;
+    height: 100px;
+    background: center center no-repeat;
     background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
     border-radius: 50%;
+    @include tablets() {
+        margin-bottom: 20px;
+    }
 }
 
 .team-accordeon__text {
@@ -128,8 +127,6 @@
     }
     @include tablets() {
         padding: 0;
-        margin-top: 20px;
-        width: 75%;
+        width: 294px;
     }
-
 }

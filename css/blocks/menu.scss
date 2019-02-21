@@ -29,14 +29,19 @@
     background-size: cover;
     display: flex;
     justify-content: flex-end;
+    @include phones () {
+        display: flex;
+    }
     &-active {
-        width: 40%;
-        max-width: 100%;
+        .menu-accordeon__text {
+            display: block;
+        }
+        width: 50%;
         @include tablets () {
             width: 60%;
         }
         @include phones () {
-            width: 100%;
+            width: 73%;
         }
         .menu-accordeon__trigger-text {
             color: $yellow;
@@ -72,12 +77,6 @@
                 }
             }
         }
-    }
-    .menu-accordeon__text {
-        display: block;
-    }
-    @include phones () {
-        display: flex;
     }
 }
 
