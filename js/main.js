@@ -73,12 +73,13 @@ accoMenuClose.addEventListener('click', function (e) {
 // const menuAccoContents = document.querySelectorAll('.menu-accordeon__content');
 // const itemsMenu = document.querySelectorAll('.menu-accordeon__item');
 // const widthItemMenu = document.querySelector('.menu-accordeon__trigger');
+// const accoMenuClose = document.querySelector('.menu-accordeon__close');
 // for (itemMenu of itemsMenu) {
 //     itemMenu.addEventListener('click', (e) => {
 //         e.preventDefault();
 //         const targetMenu = e.target;
 //         var contentMenu = targetMenu.nextElementSibling;
-//         if (contentMenu.style.width === styleWidth) {
+//         if (contentMenu.style.width == styleWidth) {
 //             contentMenu.style.width = 0;
 //         } else {
 //             for (const menuAccoContent of menuAccoContents) {
@@ -92,11 +93,18 @@ accoMenuClose.addEventListener('click', function (e) {
 //     let widthMenu = document.body.clientWidth;
 //     let itemsMenuLength = itemsMenu.length;
 //     let widthItemMenu = itemMenu.offsetWidth;
-//     return (widthMenu - (widthItemMenu * itemsMenuLength));
+//     return ( if (900 <= widthMenu) {
+//         let calWidthDesctop = (widthMenu - (widthItemMenu * itemsMenuLength)) / 2; //2 делим пополам
+//     } else {
+//         let calWidthDesctop = widthMenu - (widthItemMenu * itemsMenuLength);
+//     });)
 // };
 // let requestWidth = calculateWidth();
 // let styleWidth = requestWidth + 'px'
 
+// accoMenuClose.addEventListener('click', function (e) {
+//     menuAccoContent.style.width = 0;
+// });
 
 
 ///////////////////////////////////////////////////////////////
