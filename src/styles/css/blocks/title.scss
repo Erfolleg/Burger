@@ -1,0 +1,26 @@
+.title {
+    font-size: rem(72px);
+    color: $yellow;
+    font-family: 'Gagalin';
+    line-height: 1.181;
+    margin-bottom: rem(45px);
+    font-weight: 500;
+
+    &-burger {
+        color: #fff;
+        font-family: 'Gagalin';
+        font-size: rem(72px);
+        font-weight: 400;
+        line-height: 0.9;
+        @include phones() {
+            font-size: rem(50px);
+            line-height: 1.053;
+        }
+    }
+    &__how-work {
+        color: #2f3234;
+        font-size: rem(61px);
+        font-weight: 400;
+        line-height: rem(54.18px);
+    }
+}
