@@ -34,7 +34,7 @@ task('copy:html', () => {
     return src(`${SRC_PATH}/*.html`).pipe(dest(DIST_PATH)).pipe(reload({ stream: true }));
 });
 task('copy:img', () => {
-    return src(`${SRC_PATH}/img/**/*.{jpg, png}`).pipe(dest(`${DIST_PATH}/img`)).pipe(reload({ stream: true }));
+    return src(`${SRC_PATH}/img/**/*.{jpg,png}`).pipe(dest(`${DIST_PATH}/img`)).pipe(reload({ stream: true }));
 });
 task('copy:fonts', () => {
     return src(`${SRC_PATH}/fonts/**/*`).pipe(dest(`${DIST_PATH}/fonts`)).pipe(reload({ stream: true }));
