@@ -55,7 +55,7 @@ task('styles', () => {
         .pipe(gulpif(env === 'prod', gcmq()))
         .pipe(gulpif(env === 'prod', cleanCSS()))
         .pipe(gulpif(env === 'dev', sourcemaps.write()))
-        .pipe(dest(DIST_PATH))
+        .pipe(dest(SRC_PATH))
         .pipe(reload({ stream: true }));
 });
 
@@ -68,7 +68,7 @@ task('scripts', () => {
         })))
         // .pipe(gulpif(env === 'dev', uglify()))
         .pipe(gulpif(env === 'dev', sourcemaps.write('')))
-        .pipe(dest(DIST_PATH))
+        .pipe(dest(SRC_PATH))
         .pipe(reload({ stream: true }));
 })
 
@@ -99,27 +99,8 @@ task("icons", () => {
             }
         })
         )
-        .pipe(dest(`${DIST_PATH}/img`));
+        .pipe(dest(`${SRC_PATH}/img`));
 });
-
-// task('icons', () => {
-//     return src(`${SRC_PATH}/img/icons/*.svg`)
-//         .pipe(svgo({
-//             plugins: [
-//                 {
-//                     removeAttrs: { attrs: "(fill|stroke|style|width|height|data.*)" }
-//                 }
-//             ]
-//         }))
-//         .pipe(svgSprite({
-//             mode: {
-//                 symbol: {
-//                     sprite: "../sprite.svg"
-//                 }
-//             }
-//         }))
-//         .pipe(dest(`${DIST_PATH}/img/icons`));
-// })
 
 task('server', () => {
     browserSync.init({

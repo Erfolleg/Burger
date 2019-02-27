@@ -8,6 +8,9 @@
     position: relative;
     overflow: hidden;
     margin: 0 auto;
+    @include tablets () {
+        width: 100%;
+    }
 }
 
 .player__splash {
