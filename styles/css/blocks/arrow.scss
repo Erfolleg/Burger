@@ -1,0 +1,43 @@
+.arrow-scroll {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+    &__left {
+        position: absolute;
+        top: 40%;
+        left: -4%;
+        z-index: 1;
+        @include tablets() {
+            left: 0;
+        }
+    }
+    &__right {
+        position: absolute;
+        top: 40%;
+        right: -4%;
+        z-index: 1;
+        @include tablets() {
+            right: 0;
+        }
+    }
+}
+
+.arrow-scroll__down {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 20%;
+}
+
+.arrow-scroll__icon {
+    width: rem(29px);
+    &-left {
+        transform: rotate(90deg);
+    }
+    &-right {
+        transform: rotate(-90deg);
+    }
+}

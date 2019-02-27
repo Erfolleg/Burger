@@ -1,0 +1,41 @@
+.btn {
+    background: $red;
+    padding: rem(8px) rem(16px);
+    border-radius: rem(5px);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    font-size: rem(13px);
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    line-height: 1.875;
+    cursor: pointer;
+    &:hover {
+        background: #c1401e;
+    }
+    &__background-black {
+        background: $black;
+        &::before {
+            content: "Подробнее";
+            @include phones () {
+                content: "Читать отзыв";
+            }
+        }
+        &:hover {
+            background-color: #1f2122;
+        }
+    }
+    &__burger {
+        display: flex;
+        align-items: center;
+        border: none;
+    }
+    &-modal {
+        &::before {
+            content: "Закрыть";
+        }
+        text-align: center;
+        width: rem(100px);
+        margin: 0 auto;
+    }
+}
