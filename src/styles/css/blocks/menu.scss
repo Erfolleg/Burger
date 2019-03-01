@@ -47,7 +47,8 @@
             }
             position: relative;
             @include phones () {
-                width: rem(170px);
+                width: 100%;
+                transition: width .5s;
                 .menu-accordeon__close {
                     position: absolute;
                     right: rem(30px);
