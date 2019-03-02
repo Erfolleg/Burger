@@ -41,16 +41,19 @@
     }
     @include phones() {
         width: 100%;
+        height: 100%;
     }
     &-img {
         width: 50%;
         position: relative;
         @include tablets() {
             width: 100%;
-            height: 50%;
+            height: 40%;
+            margin-bottom: rem(25px);
         }
         @include phones() {
             width: 85%;
+            height: 40%;
             margin-bottom: rem(25px);
         }
     }
@@ -58,11 +61,12 @@
         width: 50%;
         @include tablets() {
             width: 100%;
-            height: 50%;
+            height: 40%;
             text-align: center;
         }
         @include phones() {
             width: 85%;
+            height: 40%;
         }
     }
     &-description {
@@ -217,7 +221,7 @@
             width: 70%;
         }
         @include phones() {
-            top: rem(155px);
+            bottom: rem(10px);
             left: initial;
         }
     }
@@ -225,7 +229,7 @@
 
 .burger__composition {
     position: absolute;
-    top: rem(-70px);
+    bottom: rem(300px);
     left: 0;
     text-decoration: none;
     border-radius: rem(5px);
@@ -242,10 +246,10 @@
     }
     @include tablets() {
         left: rem(40px);
-        top: rem(116px);
+        bottom: rem(300px);
     }
     @include phones() {
-        top: rem(51px);
+        bottom: rem(240px);
         left: rem(-10px);
     }
     &-icon_img {
@@ -254,14 +258,13 @@
         bottom: rem(-70px);
         opacity: 0.5;
         @include tablets() {
-            top: rem(116px);
+            bottom: rem(300px);
             right: rem(50px);
-            bottom: initial;
             left: initial;
         }
         @include phones() {
-            top: rem(51px);
-            right: rem(-25px);
+            bottom: rem(240px);
+            right: rem(0px);
         }
     }
     &-text {
@@ -286,6 +289,9 @@
     width: rem(46px);
     max-height: 100%;
     margin: rem(-33px) rem(22px) rem(-57px) rem(22px);
+    @include tablets() {
+        margin: rem(-53px) rem(25px) rem(-67px) rem(25px);
+    }
 }
 
 .burger__composition-icon_kkal {
