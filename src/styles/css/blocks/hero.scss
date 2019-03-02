@@ -1,0 +1,87 @@
+.hero {
+    background: url('img/hero-bg.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    padding-top: rem(15px);
+}
+.logo {
+    width: 6rem;
+}
+
+.logo-icon {
+    max-width: 100%;
+}
+
+.hero__order-btn {
+    margin-left: rem(14px);
+    margin-bottom: rem(10px);
+    @include tablets() {
+        position: absolute;
+        right: rem(90px);
+    }
+}
+
+.hero__content {
+    display: flex;
+    align-items: center;
+    flex: .8;
+    @include tablets() {
+        flex-direction: column;
+    }
+}
+
+.hero__content-img {
+    width: 50%;
+    margin-right: rem(15px);
+    @include tablets() {
+        width: 50%;
+        margin-right: 0;
+    }
+
+    @include phones () {
+        width: 65%;
+        margin-right: 0;
+    }
+}
+
+.hero__burger-img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.hero__content-text {
+    width: 50%;
+    justify-content: center;
+    align-content: center;
+    @include tablets() {
+        text-align: center;
+        padding-top: 0;
+        width: 50%;
+    }
+
+    @include phones () {
+        width: 100%;
+    }
+}
+
+.hero__content-description {
+    color: #fff;
+    font-size: rem(63px);
+    font-family: 'Lifehack';
+    font-weight: 500;
+    letter-spacing: rem(-1.63px);
+    line-height: 1;
+    max-width: 100%;
+
+    @include phones () {
+        font-size: rem(60px);
+        line-height: 1.1;
+
+    }
+}

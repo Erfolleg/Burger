@@ -1,0 +1,87 @@
+.humburger-menu {
+    display: none;
+    @include tablets() {
+        display: none;
+        position: fixed;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #2f3234;
+        opacity: 0.99;
+        overflow: hidden;
+        z-index: 100;
+    }
+}
+
+.humburger-menu__logo {
+    width: 6rem;
+    &-icon {
+        max-width: 100%;
+    }
+}
+
+.humburger-menu__list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.humburger-menu__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(10px);
+    flex-direction: column;
+    &:last-child {
+        &::after {
+            display: none;
+        }
+    }
+    &::after {
+        content: "";
+        width: rem(4px);
+        height: rem(4px);
+        border-radius: 50%;
+        display: inline-flex;
+        background: #fff;
+        margin: 0 rem(14px);
+    }
+}
+
+.humburger-menu__link {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Ubuntu';
+    font-size: rem(24px);
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.667;
+    margin-bottom: rem(10px);
+}
+
+.humburger-menu__close {
+    position: absolute;
+    right: rem(30px);
+    top: rem(30px);
+    width: rem(20px);
+    height: rem(20px);
+    opacity: 0.7;
+    cursor: pointer;
+    &:before,
+    &:after {
+        position: absolute;
+        left: rem(15px);
+        content: '';
+        height: rem(20px);
+        width: rem(3px);
+        background-color: #fff;
+        border-radius: rem(3px);
+    }
+    &:before {
+        transform: rotate(45deg);
+    }
+    &:after {
+        transform: rotate(-45deg);
+    }
+}

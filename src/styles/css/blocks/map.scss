@@ -1,0 +1,29 @@
+.map {
+    background: center center / cover no-repeat;
+    height: 100%;
+}
+
+.map__hint {
+    background-image: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%, #f9b43b 100%);
+    color: #fff;
+    font-family: Ubuntu;
+    font-size: rem(24px);
+    font-weight: 300;
+    padding: rem(7px);
+}
+
+.map__balloon {
+    background-image: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%, #f9b43b 100%);
+    color: #fff;
+    font-family: Ubuntu;
+    font-size: rem(14px);
+    font-weight: 500;
+    padding: rem(7px);
+    display: flex;
+    width: 600px;
+    &-img {
+        margin-right: 40px;
+        width: 20%;
+        height: 20%;
+    }
+}

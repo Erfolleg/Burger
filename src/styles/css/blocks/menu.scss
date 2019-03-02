@@ -1,0 +1,128 @@
+.menu {
+    background: url('img/bg-menu.jpg') center center / cover no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+}
+
+.title__menu {
+    color: #ffffff;
+    font-weight: 400;
+    margin: 0;
+}
+
+.section__title-menu {
+    position: absolute;
+    top: 11%;
+    left: 7%;
+}
+
+.menu-accordeon__list {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-accordeon__item {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    @include phones () {
+        display: flex;
+    }
+    &-active {
+       
+        .menu-accordeon__text {
+            display: block;
+        }
+        .menu-accordeon__trigger-text {
+            color: $yellow;
+        }
+        .menu-accordeon__content {
+            width: rem(520px);
+            @include tablets () {
+                width: rem(255px);
+            }
+            position: relative;
+            @include phones () {
+                width: 100%;
+                transition: width .5s;
+                .menu-accordeon__close {
+                    position: absolute;
+                    right: rem(30px);
+                    top: rem(30px);
+                    width: rem(20px);
+                    height: rem(20px);
+                    opacity: 0.7;
+                    z-index: 5;
+                    &:before,
+                    &:after {
+                        position: absolute;
+                        left: rem(15px);
+                        content: '';
+                        height: rem(20px);
+                        width: rem(3px);
+                        background-color: #fff;
+                        border-radius: rem(3px);
+                    }
+                    &:before {
+                        transform: rotate(45deg);
+                    }
+                    &:after {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu-accordeon__trigger {
+    width: rem(80px);
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    position: relative;
+    background: center center / cover no-repeat;
+    background-color: rgba(20, 20, 20, 0.7);
+    @include phones () {
+        width: rem(50px);
+    }
+}
+
+.menu-accordeon__trigger-text {
+    color: #fff;
+    font-family: 'Gagalin';
+    font-size: rem(40px);
+    font-weight: 400;
+    line-height: 1.57;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    white-space: nowrap;
+    transform: rotate(-90deg) translatey(-50%);
+    transform-origin: 0 0;
+    margin-top: rem(-40px);
+}
+
+.menu-accordeon__content {
+    height: 100%;
+    background-color: #2f3234;
+    opacity: 0.93;
+    width: 0;
+    overflow: hidden;
+    transition: width .4s;
+}
+
+.menu-accordeon__text {
+    color: #fff;
+    font-family: 'Ubuntu';
+    font-size: rem(14px);
+    font-weight: 300;
+    line-height: 1.7;
+    padding: rem(60px) rem(30px);
+    display: none;
+}
